@@ -99,7 +99,7 @@ h3 {
 /* Forms */
 form {
     display: flex;
-    gap: 15px;
+    gap: 5px;
     flex-wrap: wrap;
     margin-bottom: 20px;
 }

@@ -72,6 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function renderInventory() {
+        // Ordenar produtos alfabeticamente por nome
+        inventory.sort((a, b) => a.name.localeCompare(b.name));
+        
         inventoryTable.innerHTML = '';
         saleProductSelect.innerHTML = '<option value="">Selecione um produto</option>';
         inventory.forEach((product, index) => {
