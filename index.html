@@ -23,6 +23,13 @@
     <main>
         <section id="home" class="section active">
             <h2>Bem-vindo ao Sistema de Controle de Açougue</h2>
+            <div class="goal-section">
+                <h3>Definir Meta Diária</h3>
+                <form id="goal-form">
+                    <input type="number" id="daily-goal" placeholder="Meta diária (R$)" step="0.01" required>
+                    <button type="submit">Definir Meta</button>
+                </form>
+            </div>
             <div class="summary">
                 <div class="card">
                     <h3>Total de Produtos</h3>
@@ -32,7 +39,22 @@
                     <h3>Vendas Hoje (R$)</h3>
                     <p id="total-sales-home">0.00</p>
                 </div>
+                <div class="card">
+                    <h3>Lucro Líquido Hoje (R$)</h3>
+                    <p id="net-profit-home">0.00</p>
+                </div>
+                <div class="card goal-card">
+                    <h3>Meta Diária (R$)</h3>
+                    <p id="daily-goal-display">0.00</p>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <p id="progress-text">0% da meta atingida</p>
+                </div>
             </div>
+            <br>
+            <br>
+            <br>
         </section>
 
         <section id="inventory" class="section">
@@ -41,8 +63,8 @@
                 <input type="text" id="product-name" placeholder="Nome do produto" required>
                 <input type="number" id="product-quantity" placeholder="Quantidade (kg)" step="0.1" required>
                 <input type="number" id="product-price" placeholder="Preço por kg (R$)" step="0.01" required>
+                <input type="number" id="product-cost" placeholder="Custo por kg (R$)" step="0.01" required>
                 <input type="date" id="product-expiry" required>
-
                 <button type="submit">Adicionar Produto</button>
             </form>
             <table id="inventory-table">
@@ -51,6 +73,7 @@
                         <th>Nome</th>
                         <th>Quantidade (kg)</th>
                         <th>Preço/kg (R$)</th>
+                        <th>Custo/kg (R$)</th>
                         <th>Data de Validade</th>
                         <th>Ações</th>
                     </tr>
@@ -80,6 +103,7 @@
                         <th>Produto</th>
                         <th>Quantidade (kg)</th>
                         <th>Valor (R$)</th>
+                        <th>Lucro Líquido (R$)</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -90,7 +114,7 @@
         <section id="about" class="section">
             <h2>Sobre o Sistema</h2>
             <p>Este é um sistema simples para controle de estoque e vendas em um açougue. Desenvolvido com HTML, CSS e JavaScript. Dados são armazenados localmente no navegador.</p>
-            <p>Versão: 1.0 | Desenvolvido por: IA Assistente</p>
+            <p>Versão: 1.2 (Com Meta e Lucro) | Desenvolvido por: IA Assistente</p>
         </section>
     </main>
 
