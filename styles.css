@@ -129,7 +129,7 @@ button:hover {
 }
 
 /* Botões em tabelas (melhoria para mobile) */
-.remove-btn {
+.remove-btn, .remove-cart-btn {
     min-width: 80px;
     padding: 8px 12px;
 }
@@ -217,6 +217,68 @@ tbody tr:hover {
     margin-top: 20px;
     font-size: 1.2rem;
     color: #d32f2f;
+}
+
+/* Estilos para cesta e notinha */
+#cart-table, #receipt table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#receipt {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Carrinho de Vendas */
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#cart-table th, #cart-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#cart-table th {
+    background: #f8f9fa;
+}
+
+#cart-table tbody tr:hover {
+    background: #f1f1f1;
+}
+
+#cart-table button {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#cart-table button:hover {
+    background: #b71c1c;
+}
+
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #receipt, #receipt * {
+        visibility: visible;
+    }
+    #receipt {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
 }
 
 /* Responsividade */
