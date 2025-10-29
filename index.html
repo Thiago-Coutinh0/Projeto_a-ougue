@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle de Açougue</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Açougue Control</h1>
+            <ul class="nav-menu">
+                <li><a href="#" data-section="home">Home</a></li>
+                <li><a href="#" data-section="inventory">Estoque</a></li>
+                <li><a href="#" data-section="sales">Vendas</a></li>
+                <li><a href="#" data-section="reports">Relatório</a></li>
+                <li><a href="#" data-section="about">Sobre</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="section active">
+            <h2>Bem-vindo ao Sistema de Controle de Açougue</h2>
+            <div class="summary">
+                <div class="card">
+                    <h3>Total de Produtos</h3>
+                    <p id="total-products">0</p>
+                </div>
+                <div class="card">
+                    <h3>Vendas Hoje (R$)</h3>
+                    <p id="total-sales-home">0.00</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="inventory" class="section">
+            <h2>Gerenciar Estoque</h2>
+            <form id="product-form">
+                <input type="text" id="product-name" placeholder="Nome do produto" required>
+                <input type="number" id="product-quantity" placeholder="Quantidade (kg)" step="0.1" required>
+                <input type="number" id="product-price" placeholder="Preço por kg (R$)" step="0.01" required>
+                <input type="date" id="product-expiry" required>
+
+                <button type="submit">Adicionar Produto</button>
+            </form>
+            <table id="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantidade (kg)</th>
+                        <th>Preço/kg (R$)</th>
+                        <th>Data de Validade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="sales" class="section">
+            <h2>Realizar Vendas</h2>
+            <form id="sale-form">
+                <select id="sale-product" required>
+                    <option value="">Selecione um produto</option>
+                </select>
+                <input type="number" id="sale-quantity" placeholder="Quantidade a vender (kg)" step="0.1" required>
+                <button type="submit">Confirmar Venda</button>
+            </form>
+            <p class="total">Total de vendas hoje: R$ <span id="total-sales">0.00</span></p>
+        </section>
+
+        <section id="reports" class="section">
+            <h2>Relatório de Vendas</h2>
+            <table id="sales-table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Produto</th>
+                        <th>Quantidade (kg)</th>
+                        <th>Valor (R$)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <p class="total">Total acumulado: R$ <span id="total-accumulated">0.00</span></p>
+        </section>
+
+        <section id="about" class="section">
+            <h2>Sobre o Sistema</h2>
+            <p>Este é um sistema simples para controle de estoque e vendas em um açougue. Desenvolvido com HTML, CSS e JavaScript. Dados são armazenados localmente no navegador.</p>
+            <p>Versão: 1.0 | Desenvolvido por: IA Assistente</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
