@@ -11,6 +11,7 @@ body {
     color: #333;
     line-height: 1.6;
     min-height: 100vh;
+    font-size: 1rem; /* Base responsiva */
 }
 
 /* Navbar */
@@ -139,15 +140,15 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    overflow-x: auto; /* Para rolagem horizontal em telas pequenas */
-    display: block; /* Permite overflow-x */
+    overflow-x: auto; /* Rolagem horizontal para telas pequenas */
+    display: block; /* Permite overflow-x funcionar */
 }
 
 th, td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
-    white-space: nowrap; /* Evita quebra de texto em células pequenas */
+    white-space: nowrap; /* Evita quebra de texto */
 }
 
 th {
@@ -271,6 +272,33 @@ tbody tr:hover {
 
 /* Media queries para responsividade completa */
 
+/* Para tablets grandes (1024px a 1200px) */
+@media (max-width: 1200px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+    main {
+        padding: 0 15px;
+    }
+    .section {
+        padding: 25px;
+    }
+    .summary {
+        gap: 15px;
+    }
+    .card {
+        min-width: 180px;
+        padding: 18px;
+    }
+    .progress-bar {
+        height: 18px;
+    }
+    table th, table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
 /* Para tablets (768px a 1024px) */
 @media (max-width: 1024px) {
     .nav-container {
@@ -304,7 +332,7 @@ tbody tr:hover {
     }
 }
 
-/* Para dispositivos móveis (até 768px) */
+/* Para dispositivos móveis grandes (até 768px) */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -371,7 +399,7 @@ tbody tr:hover {
     }
     table th, table td {
         padding: 8px;
-        min-width: 100px; /* Garante largura mínima para evitar compressão excessiva */
+        min-width: 100px; /* Largura mínima para evitar compressão */
     }
     .total {
         font-size: 1rem;
@@ -422,6 +450,7 @@ tbody tr:hover {
     table th, table td {
         padding: 6px;
         font-size: 0.75rem;
+        min-width: 80px; /* Ajuste para telas ultra-pequenas */
     }
     .remove-btn, .remove-cart-btn {
         min-width: 60px;
