@@ -139,12 +139,15 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    overflow-x: auto; /* Para rolagem horizontal em telas pequenas */
+    display: block; /* Permite overflow-x */
 }
 
 th, td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    white-space: nowrap; /* Evita quebra de texto em células pequenas */
 }
 
 th {
@@ -266,6 +269,166 @@ tbody tr:hover {
     background: #b71c1c;
 }
 
+/* Media queries para responsividade completa */
+
+/* Para tablets (768px a 1024px) */
+@media (max-width: 1024px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+    .logo {
+        font-size: 1.6rem;
+    }
+    .nav-menu {
+        gap: 15px;
+    }
+    main {
+        padding: 0 15px;
+    }
+    .section {
+        padding: 25px;
+    }
+    .summary {
+        gap: 15px;
+    }
+    .card {
+        min-width: 180px;
+        padding: 18px;
+    }
+    .progress-bar {
+        height: 18px;
+    }
+    table th, table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Para dispositivos móveis (até 768px) */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 10px;
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .nav-menu a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    main {
+        margin: 15px auto;
+        padding: 0 10px;
+    }
+    .section {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    input, select, button {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    .summary {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .card {
+        min-width: 100%;
+        padding: 15px;
+    }
+    .card p {
+        font-size: 1.3rem;
+    }
+    .goal-section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    .progress-bar {
+        height: 15px;
+    }
+    table {
+        font-size: 0.8rem;
+    }
+    table th, table td {
+        padding: 8px;
+        min-width: 100px; /* Garante largura mínima para evitar compressão excessiva */
+    }
+    .total {
+        font-size: 1rem;
+    }
+    #receipt {
+        padding: 15px;
+    }
+    .remove-btn, .remove-cart-btn {
+        min-width: 70px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Para telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.9rem;
+    }
+    .nav-container {
+        padding: 0 5px;
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
+    .nav-menu a {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    main {
+        padding: 0 5px;
+    }
+    .section {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    h3 {
+        font-size: 1.1rem;
+    }
+    .card {
+        padding: 12px;
+    }
+    .card p {
+        font-size: 1.2rem;
+    }
+    table th, table td {
+        padding: 6px;
+        font-size: 0.75rem;
+    }
+    .remove-btn, .remove-cart-btn {
+        min-width: 60px;
+        padding: 5px 8px;
+        font-size: 0.75rem;
+    }
+}
 
 @media print {
     body * {
@@ -278,26 +441,5 @@ tbody tr:hover {
         position: absolute;
         left: 0;
         top: 0;
-    }
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    form {
-        flex-direction: column;
-    }
-    .summary {
-        flex-direction: column;
-    }
-    .progress-bar {
-        height: 15px;
     }
 }
