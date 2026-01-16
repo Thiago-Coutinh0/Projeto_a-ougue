@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle de Açougue</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Açougue Control</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-section="home">Home</a></li>
+                <li><a href="Estoque.html" data-section="inventory">Estoque</a></li>
+                <li><a href="Vendas.html" data-section="sales">Vendas</a></li>
+                <li><a href="relatorio.html" data-section="reports">Relatório</a></li>
+            </ul>
+        </div>
+    </nav>
+
+        <main>
+            <h2>Adicionar Estoque</h2>
+            <form id="product-form">
+                <input type="text" id="product-name" placeholder="Nome do produto" required>
+                <input type="number" id="product-quantity" placeholder="Quantidade (kg)" step="0.1" required>
+                <input type="number" id="product-price" placeholder="Preço por kg (R$)" step="0.01" required>
+                <input type="number" id="product-cost" placeholder="Custo por kg (R$)" step="0.01" required>
+                <input type="date" id="product-expiry" required>
+                <button type="submit">Adicionar Produto</button>
+            </form>
+
+            <h2>Conferir Estoque</h2>
+            <table id="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantidade (kg)</th>
+                        <th>Preço/kg (R$)</th>
+                        <th>Custo/kg (R$)</th>
+                        <th>Data de Validade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

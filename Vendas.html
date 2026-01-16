@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle de Açougue</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Açougue Control</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-section="home">Home</a></li>
+                <li><a href="Estoque.html" data-section="inventory">Estoque</a></li>
+                <li><a href="Vendas.html" data-section="sales">Vendas</a></li>
+                <li><a href="relatorio.html" data-section="reports">Relatório</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- VENDAS COM CARRINHO -->
+            <h2>Realizar Vendas</h2>
+            <form id="sale-form">
+                <select id="sale-product" required>
+                    <option value="">Selecione um produto</option>
+                </select>
+                <input type="number" id="sale-quantity" placeholder="Quantidade a vender (kg)" step="0.1" required>
+                <button type="button" id="add-to-cart">Adicionar ao Carrinho</button>
+            </form>
+
+            <h3>Carrinho</h3>
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade (kg)</th>
+                        <th>Preço/kg (R$)</th>
+                        <th>Subtotal (R$)</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <br>
+            <p>Total do carrinho: R$ <span id="cart-total">0.00</span></p>
+            <br>
+
+            <button type="button" id="finalize-sale">Finalizar Venda</button>
+            <button type="button" id="print-receipt">Imprimir Notinha</button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

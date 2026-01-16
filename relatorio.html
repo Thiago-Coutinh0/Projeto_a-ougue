@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle de Açougue</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Açougue Control</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-section="home">Home</a></li>
+                <li><a href="Estoque.html" data-section="inventory">Estoque</a></li>
+                <li><a href="Vendas.html" data-section="sales">Vendas</a></li>
+                <li><a href="relatorio.html" data-section="reports">Relatório</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- RELATÓRIO -->
+            <h2>Relatório de Vendas</h2>
+            <table id="sales-table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Produto</th>
+                        <th>Quantidade (kg)</th>
+                        <th>Valor (R$)</th>
+                        <th>Lucro Líquido (R$)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <p class="total">Total acumulado: R$ <span id="total-accumulated">0.00</span></p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
